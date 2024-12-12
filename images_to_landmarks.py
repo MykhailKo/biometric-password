@@ -19,10 +19,8 @@ options = vision.FaceLandmarkerOptions(base_options=base_options, num_faces=1)
 detector = vision.FaceLandmarker.create_from_options(options)
 
 class_dirs = os.listdir('dataset/')
-skip_classes = ['neutral', 'smile', 'blink', 'brows_lifted', 'mouth_open']
 
 for class_dir in class_dirs:
-  if class_dir in skip_classes: continue
   os.makedirs(os.path.join(RESULT_IMG_PATH, class_dir), exist_ok=True)
   os.makedirs(os.path.join(RESULT_DATA_PATH, class_dir), exist_ok=True)
 
